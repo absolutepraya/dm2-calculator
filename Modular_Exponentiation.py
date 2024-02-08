@@ -1,22 +1,33 @@
-# Version: 1.0
+# Version: 1.1
+
+import sys
 
 print("""┳┳┓   ┓  ┓      ┏┓             •   •    
 ┃┃┃┏┓┏┫┓┏┃┏┓┏┓  ┣ ┓┏┏┓┏┓┏┓┏┓┏┓╋┓┏┓╋┓┏┓┏┓
 ┛ ┗┗┛┗┻┗┻┗┗┻┛   ┗┛┛┗┣┛┗┛┛┗┗ ┛┗┗┗┗┻┗┗┗┛┛┗  by absolutepraya
                     ┛
 
-This program not just calculates the modular exponentiation
+This program not just calculates the modular exponentiation 
 of a number, but also shows the steps of the calculation. 
 The steps are shown in a table format.
 
 ————————————————————————————————————————————————————————————
 """)
 
-# Input
-print("Enter the base, exponent, and mod of the equation.")
-base = int(input("Base     =  "))
-exponent = int(input("Exponent =  "))
-mod = int(input("Mod      =  "))
+# Command line input
+if len(sys.argv) > 1:
+    base = int(sys.argv[1])
+    exponent = int(sys.argv[2])
+    mod = int(sys.argv[3])
+    print(f"""Base     =  {base}
+Exponent =  {exponent}
+Mod      =  {mod}""")
+# Input inside the program
+else:
+    print("Enter the base, exponent, and mod of the equation.")
+    base = int(input("Base     =  "))
+    exponent = int(input("Exponent =  "))
+    mod = int(input("Mod      =  "))
 print("""
 ————————————————————————————————————————————————————————————
 """)
@@ -56,9 +67,10 @@ pow_str.append("-")
 
 # Print initialization
 print(f"""### INITIALIZATION
-Exponent in binary: {exp_bin}
-Initial result:     1
-Initial power:      {base} % {mod} = {base % mod}
+
+Exponent in binary :  {exp_bin}
+Initial result     :  1
+Initial power      :  {base} % {mod} = {base % mod}
 
 ### CALCULATION
 """)
@@ -75,4 +87,4 @@ print('—' * (sum(column_widths) + len(column_widths) - 1))
 for row in zip(list(exp_bin_rev), res_str, pow_str, pow_lst):
     print('|'.join(f'{str(item):^{width}}' for item, width in zip(row, column_widths)))
 
-print(f"\nThe result is {res_lst[i]}")
+print(f"\n∴ The result is {res_lst[i]}")
