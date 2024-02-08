@@ -24,8 +24,8 @@ and more to come.
 
 3. Run the Python calculator  
 `python [Calculator_Name].py`  
-OR  
-use command line arguments:  
+<br>OR  
+<br>use command line arguments:  
 __\# For Modular Exponentiation calculator__  
 `python modular_exponentiation.py [base] [exponent] [modulus]`  
 __\# For Trial Division calculator__  
