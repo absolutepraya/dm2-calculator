@@ -5,6 +5,7 @@ This is not just a simple calculator, but a calculator that also provide step-by
 - Trial Division
 - GCD Euclidean (soon)
 - GCD Benzout (soon)  
+
 and more to come.
 
 ![mod_exp](README/mod_exp.png)
