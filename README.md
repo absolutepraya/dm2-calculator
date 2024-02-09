@@ -40,16 +40,19 @@ __\# and more to come__
 ## Screenshots
 
 - Modular Exponentiation<br>  
-<kbd><img src="README/mod_exp.png"></kbd>
+<kbd><img src="README/mod_exp.png"></kbd>  
+<br>
 
 - Trial Division<br>  
-<kbd><img src="README/trial_div.png"></kbd>
+<kbd><img src="README/trial_div.png"></kbd>  
+<br>
 
 - GCD Euclidean's Algorithm<br>  
-<kbd><img src="README/gcd_euclidean.png"></kbd>
+<kbd><img src="README/gcd_euclidean.png"></kbd>  
+<br>
 
 - GCD Benzout's Theorem<br>  
-<kbd><img src="README/gcd_bezout.png"></kbd>
+<kbd><img src="README/gcd_bezout.png"></kbd> 
 
 ## Future Plan
 
