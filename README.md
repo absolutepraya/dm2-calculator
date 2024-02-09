@@ -18,13 +18,13 @@ and more to come.
 
 ## How to Use
 
-1. Clone the repository  
+1. Open your terminal and clone the repository
 `git clone https://github.com/absolutepraya/dm2-calculator.git`
 
 2. Change directory to the repository  
 `cd dm2-calculator`
 
-3. Run the Python calculator  
+3. Run the desired Python calculator  
 `python [Calculator_Name].py`  
 <br>OR  
 <br>use command line arguments:  
