@@ -3,12 +3,12 @@
 This is not just a simple calculator, but a calculator that also provide step-by-step solutions (might as well call it a solver) for the following topics:
 - Modular Exponentiation
 - Trial Division
-- GCD Euclidean (soon)
-- GCD Benzout (soon)  
+- GCD Euclidean's Algorithm
+- GCD Benzout's Theorem
 
 and more to come.
 
-![mod_exp](README/mod_exp.png)
+[Check the screenshots](#screenshots)
 
 ## Dependencies
 
@@ -28,11 +28,31 @@ and more to come.
 <br>OR  
 <br>use command line arguments:  
 __\# For Modular Exponentiation calculator__  
-`python modular_exponentiation.py [base] [exponent] [modulus]`  
+`python Modular_Exponentiation.py [base] [exponent] [modulus]`  
 __\# For Trial Division calculator__  
-`python trial_division.py [number]`  
-__\# For GCD Euclidean calculator__  
-`(soon)`  
-__\# For GCD Benzout calculator__  
-`(soon)`  
+`python Trial_Division.py [number]`  
+__\# For GCD Euclidean's Algorithm calculator__  
+`python GDC_Euclidean.py [number1] [number2]`  
+__\# For GCD Benzout's Theorem calculator__  
+`python GDC_Benzout.py [number1] [number2]`   
 __\# and more to come__
+
+## Screenshots
+
+Modular Exponentiation
+<img src="README/mod_exp.png" style="border: 1px solid rgb(158, 196, 216);">
+
+Trial Division
+<img src="README/trial_div.png" style="border: 1px solid rgb(158, 196, 216);">
+
+GCD Euclidean's Algorithm
+<img src="README/gcd_euclidean.png" style="border: 1px solid rgb(158, 196, 216);">
+
+GCD Benzout's Theorem
+<img src="README/gcd_bezout.png" style="border: 1px solid rgb(158, 196, 216);">
+
+## Future Plan
+
+- Add more calculators along the time
+- Make the it runs indefinitely until the user decides to exit
+- Package the calculator using \_\_init__ and \_\_main__
