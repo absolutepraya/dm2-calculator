@@ -1,8 +1,9 @@
 # Discrete Mathematics 2 Calculator with Steps
 
-This is not just a simple calculator, but a calculator that also provide step-by-step solutions (might as well call it a solver) for the following topics:
+This is not just a simple calculator, but a calculator that also provide ***step-by-step solutions*** (might as well call it a solver) for the following topics:
 - Modular Exponentiation
 - Trial Division
+- GCD (Unlimited amount of numbers can be calculated)
 - GCD Euclidean's Algorithm
 - GCD Benzout's Theorem
 
@@ -31,6 +32,8 @@ __\# For Modular Exponentiation calculator__
 `python Modular_Exponentiation.py [base] [exponent] [modulus]`  
 __\# For Trial Division calculator__  
 `python Trial_Division.py [number]`  
+__\# For GCD calculator__  
+`python GDC.py [number1] [number2] [number3] ...`  
 __\# For GCD Euclidean's Algorithm calculator__  
 `python GDC_Euclidean.py [number1] [number2]`  
 __\# For GCD Benzout's Theorem calculator__  
@@ -45,6 +48,10 @@ __\# and more to come__
 
 - Trial Division<br>  
 <kbd><img src="README/trial_div.png"></kbd>  
+<br>
+
+- GCD<br>  
+<kbd><img src="README/gcd.png"></kbd>
 <br>
 
 - GCD Euclidean's Algorithm<br>  
