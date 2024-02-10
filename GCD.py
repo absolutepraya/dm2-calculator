@@ -1,4 +1,4 @@
-# Version: 1.0
+# Version: 1.1
 
 import sys
 import math
@@ -9,18 +9,17 @@ print("""┏┓              ┏┓┏┓┳┓
 ┗┛┗┛┛┗┗┛┗┗┗┛┛┗  ┗┛┗┛┻┛  by absolutepraya
 
 GCD calculator that can take unlimited amount of numbers, 
-and shows the steps in the format of factorial tree.
-For example, you can do GCD(x, y, z, ...).
+and shows the steps. For example, you can do GCD(x, y, z, ...).
 
 ————————————————————————————————————————————————————————————
-""")
+
+Enter numbers for GCD(x, y, z, ...). Divide them with comma""")
 
 # Command line arguments
 if len(sys.argv) > 1:
     nums = [int(num) for num in sys.argv[1:]]
 # Input inside the program
 else:
-    print("Enter numbers for GCD(x, y, z, ...). Divide them with comma.")
     nums = [int(num) for num in input("x, y, z, ... = ").split(",")]
 print(f"""GCD({', '.join(map(str, nums))})
 
