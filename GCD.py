@@ -1,4 +1,4 @@
-# Version: 1.1
+# Version: 1.3
 
 import sys
 import math
@@ -57,6 +57,7 @@ for num in nums:
 
 # GCD
 factors = reduce(lambda x, y: list(set(x) & set(y)), factors_list)
+factors_ori = factors # Save the original factors for later use, because factors will be modified
 
 # Print prime factorization with exponent notation
 for i, num in enumerate(nums):
@@ -67,12 +68,12 @@ for i, num in enumerate(nums):
 
 print("(2) Find the common factors among the prime factorizations, \nand multiply them together.")
 
-# Print common factors
-common_factors = list(set(factors))
+# Make the GCD string
 common_factor_counts = {}
-for factor in common_factors:
-    common_factor_counts[factor] = min(factor_counts.get(factor, 0) for factor_counts in factor_counts_list)
-common_factor_str = " * ".join([f"{factor}^{count}" if count > 1 else str(factor) for factor, count in common_factor_counts.items()]) if common_factor_counts else "1"
+for factor in factors_ori:
+    factor_counts = [factor_counts_list[i].get(factor, 0) for i in range(len(nums))]  # Add a check to handle missing keys
+    common_factor_counts[factor] = min(factor_counts)
+common_factor_str = " * ".join([f"{factor}^{count}" if count > 1 else str(factor) for factor, count in common_factor_counts.items()])
 common_factor_value = reduce(lambda x, y: x * y, [factor ** count for factor, count in common_factor_counts.items()])
 
 # Print GCD
