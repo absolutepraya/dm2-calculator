@@ -1,4 +1,4 @@
-# Version: 1.1
+# Version: 1.15
 
 import sys
 
@@ -87,4 +87,4 @@ print('—' * (sum(column_widths) + len(column_widths) - 1))
 for row in zip(list(exp_bin_rev), res_str, pow_str, pow_lst):
     print('|'.join(f'{str(item):^{width}}' for item, width in zip(row, column_widths)))
 
-print(f"\n∴ The result is {res_lst[i]}")
+print(f"\n∴ Therefore, the result is {res_lst[i]}")
