@@ -1,4 +1,4 @@
-# Version: 1.4
+# Version: 1.45
 
 import sys
 from functools import reduce
@@ -12,7 +12,7 @@ and shows the steps. For example, you can do GCD(x, y, z, ...).
 
 ————————————————————————————————————————————————————————————
 
-Enter numbers for GCD(x, y, z, ...). Divide them with comma""")
+Enter the numbers for GCD(x, y, z, ...). Divide them with comma""")
 
 # Command line arguments
 if len(sys.argv) > 1:
