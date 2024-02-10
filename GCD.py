@@ -31,7 +31,7 @@ print(f"""GCD({', '.join(map(str, nums))})
 
 # Prime factorization
 factors_list = []
-factor_counts_list = []  # New list to store factor counts for each number
+factor_counts_list = [] # New list to store factor counts for each number
 for num in nums:
     factors = []
     while num % 2 == 0:
@@ -56,11 +56,14 @@ for num in nums:
 
 # Print prime factorization with exponent notation
 for i, num in enumerate(nums):
-    factor_counts = factor_counts_list[i]  # Use the corresponding factor counts
-    factor_str = " * ".join([f"{factor}^{count}" if count > 1 else str(factor) for factor, count in factor_counts.items()])
-    print(f"{num} =", " * ".join(map(str, factors_list[i])) + f"\n{num} = {factor_str}\n")
+    factor_counts = factor_counts_list[i] # Use the corresponding factor counts
+    if num == 1 or len(factor_counts) == 1:
+        print(f"{num} = {num}\n")
+    else:
+        factor_str = " * ".join([f"{factor}^{count}" if count > 1 else str(factor) for factor, count in factor_counts.items()])
+        print(f"{num} =", " * ".join(map(str, factors_list[i])) + f"\n{num} = {factor_str}\n")
 
-print("(2) Find the common factors among the prime factorizations, \nand multiply them together.")
+print("(2) Find the minimum exponents among the common prime factorizations, \nand multiply them together.")
 
 # Get the base of the factors
 factors = reduce(lambda x, y: list(set(x) & set(y)), factors_list)
@@ -73,13 +76,16 @@ if not factors:
     # Print GCD
     print(f"{gcd_str} = 1 (no common factors)")
     common_factor_value = 1
+
 else:
     # Make the common factor string
     common_factor_counts = {}
     for factor in factors:
-        factor_counts = [factor_counts_list[i].get(factor, 0) for i in range(len(nums))]  # Add a check to handle missing keys
+        factor_counts = [factor_counts_list[i].get(factor, 0) for i in range(len(nums))] # Add a check to handle missing keys
         common_factor_counts[factor] = min(factor_counts)
     common_factor_str = " * ".join([f"{factor}^{count}" if count > 1 else str(factor) for factor, count in common_factor_counts.items()])
+
+    # GCD value
     common_factor_value = reduce(lambda x, y: x * y, [factor ** count for factor, count in common_factor_counts.items()])
 
     # Print GCD
