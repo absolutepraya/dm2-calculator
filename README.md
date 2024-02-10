@@ -6,6 +6,7 @@ This is not just a simple calculator, but a calculator that also provide ***step
 - GCD (unlimited amount of numbers can be calculated)
 - GCD Euclidean's Algorithm
 - GCD Benzout's Theorem
+- LCM (unlimited amount of numbers can be calculated)
 
 and more to come.
 
@@ -18,7 +19,7 @@ and more to come.
 
 ## How to Use
 
-1. Open your terminal and clone the repository
+1. Open your terminal and clone the repository  
 `git clone https://github.com/absolutepraya/dm2-calculator.git`
 
 2. Change directory to the repository  
@@ -38,6 +39,8 @@ __\# For GCD Euclidean's Algorithm calculator__
 `python GDC_Euclidean.py [number1] [number2]`  
 __\# For GCD Benzout's Theorem calculator__  
 `python GDC_Benzout.py [number1] [number2]`   
+__\# For LCM calculator__  
+`python LCM.py [number1] [number2] [number3] ...`  
 __\# and more to come__
 
 ## Screenshots
@@ -51,15 +54,19 @@ __\# and more to come__
 <br>
 
 - GCD<br>  
-<kbd><img src="README/gcd.png"></kbd>
+<kbd><img src="README/gcd.png"></kbd>  
 <br>
 
 - GCD Euclidean's Algorithm<br>  
 <kbd><img src="README/gcd_euclidean.png"></kbd>  
+<br>  
+
+- GCD Bezout's Theorem<br>  
+<kbd><img src="README/gcd_bezout.png"></kbd>  
 <br>
 
-- GCD Benzout's Theorem<br>  
-<kbd><img src="README/gcd_bezout.png"></kbd> 
+- LCM<br>  
+<kbd><img src="README/lcm.png"></kbd>
 
 ## Future Plan
 
