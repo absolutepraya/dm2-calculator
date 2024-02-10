@@ -1,12 +1,11 @@
-# Version: 1.3
+# Version: 1.4
 
 import sys
-import math
 from functools import reduce
 
-print("""┏┓              ┏┓┏┓┳┓
-┃ ┏┓┏┳┓┏┳┓┏┓┏┓  ┃┓┃ ┃┃
-┗┛┗┛┛┗┗┛┗┗┗┛┛┗  ┗┛┗┛┻┛  by absolutepraya
+print("""┏┓┏┓┳┓
+┃┓┃ ┃┃
+┗┛┗┛┻┛  by absolutepraya
 
 GCD calculator that can take unlimited amount of numbers, 
 and shows the steps. For example, you can do GCD(x, y, z, ...).
@@ -38,7 +37,7 @@ for num in nums:
     while num % 2 == 0:
         factors.append(2)
         num //= 2
-    for i in range(3, int(math.sqrt(num)) + 1, 2):
+    for i in range(3, int(num ** 0.5) + 1, 2):
         while num % i == 0:
             factors.append(i)
             num //= i
@@ -55,35 +54,38 @@ for num in nums:
             factor_counts[factor] = 1
     factor_counts_list.append(factor_counts)
 
-# GCD
-factors = reduce(lambda x, y: list(set(x) & set(y)), factors_list)
-factors_ori = factors # Save the original factors for later use, because factors will be modified
-
 # Print prime factorization with exponent notation
 for i, num in enumerate(nums):
-    factors = factors_list[i]
     factor_counts = factor_counts_list[i]  # Use the corresponding factor counts
     factor_str = " * ".join([f"{factor}^{count}" if count > 1 else str(factor) for factor, count in factor_counts.items()])
     print(f"{num} =", " * ".join(map(str, factors_list[i])) + f"\n{num} = {factor_str}\n")
 
 print("(2) Find the common factors among the prime factorizations, \nand multiply them together.")
 
-# Make the GCD string
-common_factor_counts = {}
-for factor in factors_ori:
-    factor_counts = [factor_counts_list[i].get(factor, 0) for i in range(len(nums))]  # Add a check to handle missing keys
-    common_factor_counts[factor] = min(factor_counts)
-common_factor_str = " * ".join([f"{factor}^{count}" if count > 1 else str(factor) for factor, count in common_factor_counts.items()])
-common_factor_value = reduce(lambda x, y: x * y, [factor ** count for factor, count in common_factor_counts.items()])
+# Get the base of the factors
+factors = reduce(lambda x, y: list(set(x) & set(y)), factors_list)
 
-# Print GCD
-gcd_str = f"GCD({', '.join(map(str, nums))})"
-if common_factor_value == 1:
+# Make the GCD string
+gcd_str = f"\nGCD({', '.join(map(str, nums))})"
+
+# If there are no common factors
+if not factors:
+    # Print GCD
     print(f"{gcd_str} = 1 (no common factors)")
+    common_factor_value = 1
 else:
-    print(f"{gcd_str} = {common_factor_str}")
-    print(f"{' ' * len(gcd_str)} = {common_factor_value}")
+    # Make the common factor string
+    common_factor_counts = {}
+    for factor in factors:
+        factor_counts = [factor_counts_list[i].get(factor, 0) for i in range(len(nums))]  # Add a check to handle missing keys
+        common_factor_counts[factor] = min(factor_counts)
+    common_factor_str = " * ".join([f"{factor}^{count}" if count > 1 else str(factor) for factor, count in common_factor_counts.items()])
+    common_factor_value = reduce(lambda x, y: x * y, [factor ** count for factor, count in common_factor_counts.items()])
+
+    # Print GCD
+    print(f"{gcd_str} = {common_factor_str}\n" +
+    f"{' ' * len(gcd_str)}= {common_factor_value}")
 
 print(f"\n∴ Therefore, the GCD of the numbers is {common_factor_value}.")
-if common_factor_value == 1:
+if not factors:
     print("  This means these numbers are pairwise relatively prime.")
