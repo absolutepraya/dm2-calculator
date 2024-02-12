@@ -1,6 +1,7 @@
-# Version: 1.45
+# Version: 1.48
 
 import sys
+import math
 from functools import reduce
 
 print("""┏┓┏┓┳┓
@@ -92,6 +93,26 @@ else:
     print(f"{gcd_str} = {common_factor_str}\n" +
     f"{' ' * len(gcd_str)}= {common_factor_value}")
 
-print(f"\n∴ Therefore, the GCD of the numbers is {common_factor_value}.")
-if not factors:
-    print("  This means these numbers are pairwise relatively prime.")
+print(f"""
+∴ Therefore, the GCD of the numbers is {common_factor_value}.
+
+————————————————————————————————————————————————————————————
+
+### EXTRA: CHECKING PAIRWISE PRIME
+""")
+
+# Check pairwise relatively prime
+pairwise_prime = False
+for i in range(len(nums)):
+    for j in range(i+1, len(nums)):
+        gcd = math.gcd(nums[i], nums[j])
+        if gcd == 1:
+            print(f"GCD({nums[i]}, {nums[j]}) = 1 (pairwise relatively prime)")
+            pairwise_prime = True
+        else:
+            print(f"GCD({nums[i]}, {nums[j]}) = {gcd}")
+
+if pairwise_prime:
+    print("\n∴ The numbers are pairwise relatively prime.")
+else:
+    print("\n∴ The numbers are not pairwise relatively prime.")
