@@ -1,18 +1,19 @@
-# Version: 1.15
+# Version: 1.25
 
 import sys
 
-print("""┳┳┓   ┓  ┓      ┏┓             •   •    
+print("""\033[32m┳┳┓   ┓  ┓      ┏┓             •   •    
 ┃┃┃┏┓┏┫┓┏┃┏┓┏┓  ┣ ┓┏┏┓┏┓┏┓┏┓┏┓╋┓┏┓╋┓┏┓┏┓
-┛ ┗┗┛┗┻┗┻┗┗┻┛   ┗┛┛┗┣┛┗┛┛┗┗ ┛┗┗┗┗┻┗┗┗┛┛┗  by absolutepraya
+┛ ┗┗┛┗┻┗┻┗┗┻┛   ┗┛┛┗┣┛┗┛┛┗┗ ┛┗┗┗┗┻┗┗┗┛┛┗  by absolutepraya\033[0m
                     ┛
 
 This program not just calculates the modular exponentiation 
 of a number, but also shows the steps of the calculation. 
 The steps are shown in a table format.
 
-————————————————————————————————————————————————————————————
-""")
+———— I N P U T ————————————————————————————————————————————————————————
+
+Enter the base, exponent, and mod of the equation.""")
 
 # Command line input
 if len(sys.argv) > 1:
@@ -24,12 +25,12 @@ Exponent =  {exponent}
 Mod      =  {mod}""")
 # Input inside the program
 else:
-    print("Enter the base, exponent, and mod of the equation.")
     base = int(input("Base     =  "))
     exponent = int(input("Exponent =  "))
     mod = int(input("Mod      =  "))
-print("""
-————————————————————————————————————————————————————————————
+print(f"""\033[33m{base}^{exponent} % {mod}\033[0m
+
+———— S T E P S ————————————————————————————————————————————————————————
 """)
 
 # Power calculator
@@ -87,4 +88,4 @@ print('—' * (sum(column_widths) + len(column_widths) - 1))
 for row in zip(list(exp_bin_rev), res_str, pow_str, pow_lst):
     print('|'.join(f'{str(item):^{width}}' for item, width in zip(row, column_widths)))
 
-print(f"\n∴ Therefore, the result is {res_lst[i]}")
+print(f"\n\033[33m∴ Therefore, the result is {res_lst[i]}\033[0m")
