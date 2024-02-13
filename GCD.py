@@ -1,17 +1,17 @@
-# Version: 1.48
+# Version: 1.50
 
 import sys
 import math
 from functools import reduce
 
-print("""┏┓┏┓┳┓
+print("""\033[32m┏┓┏┓┳┓
 ┃┓┃ ┃┃
-┗┛┗┛┻┛  by absolutepraya
+┗┛┗┛┻┛  by absolutepraya\033[0m
 
 GCD calculator that can take unlimited amount of numbers, 
 and shows the steps. For example, you can do GCD(x, y, z, ...).
 
-————————————————————————————————————————————————————————————
+———— I N P U T ————————————————————————————————————————————————————————
 
 Enter the numbers for GCD(x, y, z, ...). Divide them with comma""")
 
@@ -21,9 +21,9 @@ if len(sys.argv) > 1:
 # Input inside the program
 else:
     nums = [int(num) for num in input("x, y, z, ... = ").split(",")]
-print(f"""GCD({', '.join(map(str, nums))})
+print(f"""\033[33mGCD({', '.join(map(str, nums))})\033[0m
 
-————————————————————————————————————————————————————————————
+———— S T E P S ————————————————————————————————————————————————————————
 
 ### SOLVING STEPS
 
@@ -94,9 +94,9 @@ else:
     f"{' ' * len(gcd_str)}= {common_factor_value}")
 
 print(f"""
-∴ Therefore, the GCD of the numbers is {common_factor_value}.
+\033[33m∴ Therefore, the GCD of the numbers is {common_factor_value}\033[0m.
 
-————————————————————————————————————————————————————————————
+———— E X T R A ————————————————————————————————————————————————————————
 
 ### EXTRA: CHECKING PAIRWISE PRIME
 """)
@@ -113,6 +113,6 @@ for i in range(len(nums)):
             print(f"GCD({nums[i]}, {nums[j]}) = {gcd}")
 
 if pairwise_prime:
-    print("\n∴ The numbers are pairwise relatively prime.")
+    print("\n\033[33m∴ The numbers are pairwise relatively prime.\033[0m")
 else:
-    print("\n∴ The numbers are not pairwise relatively prime.")
+    print("\n\033[33m∴ The numbers are not pairwise relatively prime.\033[0m")
