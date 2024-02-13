@@ -11,7 +11,7 @@ linear number combination (GCD(x, y) = m * x + n * y).
 
 ———— I N P U T ————————————————————————————————————————————————————————
 
-"Enter two numbers for GCD(x, y).""")
+Enter two numbers for GCD(x, y).""")
 
 # Command line arguments
 if len(sys.argv) > 1:
