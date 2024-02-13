@@ -45,28 +45,17 @@ __\# and more to come__
 
 ## Screenshots
 
-- Modular Exponentiation<br>  
-<kbd><img src="README/mod_exp.png"></kbd>  
-<br>
+| **Modular Exponentiation** | **Trial Division** |
+|---------|---------|
+| ![Modular Exponentiation](README/mod_exp.png) | ![Trial Division](README/trial_div.png) |
 
-- Trial Division<br>  
-<kbd><img src="README/trial_div.png"></kbd>  
-<br>
+| **GCD** | **GCD Euclidean's Algorithm** |
+|---------|---------|
+| ![GCD](README/gcd.png) | ![GCD Euclidean's Algorithm](README/gcd_euclidean.png) |
 
-- GCD<br>  
-<kbd><img src="README/gcd.png"></kbd>  
-<br>
-
-- GCD Euclidean's Algorithm<br>  
-<kbd><img src="README/gcd_euclidean.png"></kbd>  
-<br>  
-
-- GCD Bezout's Theorem<br>  
-<kbd><img src="README/gcd_bezout.png"></kbd>  
-<br>
-
-- LCM<br>  
-<kbd><img src="README/lcm.png"></kbd>
+| **GCD Bezout's Theorem** | **LCM** |
+|---------|---------|
+| ![GCD Bezout's Theorem](README/gcd_bezout.png) | ![LCM](README/lcm.png) |
 
 ## Future Plan
 
