@@ -3,7 +3,7 @@
 This is not just a simple calculator, but a calculator that also provide ***step-by-step solutions*** (might as well call it a solver) for the following topics:
 - Modular Exponentiation
 - Trial Division
-- GCD (unlimited amount of numbers can be calculated)
+- GCD with Pairwise Prime (unlimited amount of numbers can be calculated)
 - GCD Euclidean's Algorithm
 - GCD Benzout's Theorem
 - LCM (unlimited amount of numbers can be calculated)
