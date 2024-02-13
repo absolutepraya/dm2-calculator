@@ -1,16 +1,17 @@
-# Verison: 1.0
+# Verison: 1.1
 
 import sys
 
-print("""┳┓          ┏┓┏┓┳┓
+print("""\033[32m┳┓          ┏┓┏┓┳┓
 ┣┫┏┓┓┏┓┓┏╋  ┃┓┃ ┃┃
-┻┛┗ ┗┗┛┗┻┗  ┗┛┗┛┻┛  by absolutepraya
+┻┛┗ ┗┗┛┗┻┗  ┗┛┗┛┻┛  by absolutepraya\033[0m
 
 Shows the steps of the Bezout's theorem to express GCD as 
 linear number combination (GCD(x, y) = m * x + n * y).
 
-————————————————————————————————————————————————————————————
-""")
+———— I N P U T ————————————————————————————————————————————————————————
+
+"Enter two numbers for GCD(x, y).""")
 
 # Command line arguments
 if len(sys.argv) > 1:
@@ -18,12 +19,11 @@ if len(sys.argv) > 1:
     num2 = int(sys.argv[2])
 # Input inside the program
 else:
-    print("Enter two numbers for GCD(x, y).")
     num1 = int(input("x = "))
     num2 = int(input("y = "))
-print(f"""GCD({num1}, {num2})
+print(f"""\033[33mGCD({num1}, {num2})\033[0m
 
-————————————————————————————————————————————————————————————
+———— S T E P S ————————————————————————————————————————————————————————
 
 ### SOLVING STEPS
 
@@ -61,4 +61,4 @@ while y != 0:
 print(f"""
 m = {m}
 n = {n}
-∴ Therefore, GCD({num1}, {num2}) = {m} * {num1} + {n} * {num2}""")
+\033[33m∴ Therefore, GCD({num1}, {num2}) = {m} * {num1} + {n} * {num2}\033[0m""")
