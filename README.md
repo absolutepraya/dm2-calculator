@@ -12,6 +12,8 @@ and more to come.
 
 [Check the screenshots](#screenshots)
 
+Please do note that this project is still in its early stage, so there might be some bugs and errors. If you find any, please let me know by creating an issue.
+
 ## Dependencies
 
 - Python 3.7 or higher
@@ -27,21 +29,30 @@ and more to come.
 
 3. Run the desired Python calculator  
 `python [Calculator_Name].py`  
-<br>OR  
-<br>use command line arguments:  
-__\# For Modular Exponentiation calculator__  
+or [check the command line arguments](#command-line-arguments)
+
+## Command Line Arguments
+
+- For Modular Exponentiation calculator  
 `python Modular_Exponentiation.py [base] [exponent] [modulus]`  
-__\# For Trial Division calculator__  
+
+- For Trial Division calculator  
 `python Trial_Division.py [number]`  
-__\# For GCD calculator__  
-`python GDC.py [number1] [number2] [number3] ...`  
-__\# For GCD Euclidean's Algorithm calculator__  
+
+- For GCD calculator  
+`python GDC.py [number1] [number2] [number3] ...`
+
+- For GCD Euclidean's Algorithm calculator  
 `python GDC_Euclidean.py [number1] [number2]`  
-__\# For GCD Benzout's Theorem calculator__  
+
+- For GCD Benzout's Theorem calculator  
 `python GDC_Benzout.py [number1] [number2]`   
-__\# For LCM calculator__  
-`python LCM.py [number1] [number2] [number3] ...`  
-__\# and more to come__
+
+- For LCM calculator  
+`python LCM.py [number1] [number2] [number3] ...` 
+
+- For Chinese Remainder Theorem (CRT) calculator,  the supported form is x ≡ a (mod n)  
+`python CRT.py a1,n1 a2,n2 a3,n3 ...`
 
 ## Screenshots
 
@@ -56,6 +67,10 @@ __\# and more to come__
 | **GCD Bezout's Theorem** | **LCM** |
 |---------|---------|
 | ![GCD Bezout's Theorem](README/gcd_bezout.png) | ![LCM](README/lcm.png) |
+
+| **Chinese Remainder Theorem (CRT)** |
+|---------|
+| ![CRT](README/crt.png) |
 
 ## Future Plan
 
