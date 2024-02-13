@@ -4,9 +4,9 @@ import sys
 
 print("""\033[32m┳┳┓   ┓  ┓      ┏┓             •   •    
 ┃┃┃┏┓┏┫┓┏┃┏┓┏┓  ┣ ┓┏┏┓┏┓┏┓┏┓┏┓╋┓┏┓╋┓┏┓┏┓
-┛ ┗┗┛┗┻┗┻┗┗┻┛   ┗┛┛┗┣┛┗┛┛┗┗ ┛┗┗┗┗┻┗┗┗┛┛┗  by absolutepraya\033[0m
+┛ ┗┗┛┗┻┗┻┗┗┻┛   ┗┛┛┗┣┛┗┛┛┗┗ ┛┗┗┗┗┻┗┗┗┛┛┗  by absolutepraya
                     ┛
-
+\033[0m
 This program not just calculates the modular exponentiation 
 of a number, but also shows the steps of the calculation. 
 The steps are shown in a table format.
