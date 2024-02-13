@@ -3,15 +3,16 @@
 import math
 import sys
 
-print("""┏┳┓  •  ┓  ┳┓•  • •    
+print("""\033[32m┏┳┓  •  ┓  ┳┓•  • •    
  ┃ ┏┓┓┏┓┃  ┃┃┓┓┏┓┏┓┏┓┏┓
- ┻ ┛ ┗┗┻┗  ┻┛┗┗┛┗┛┗┗┛┛┗  by absolutepraya
+ ┻ ┛ ┗┗┻┗  ┻┛┗┗┛┗┛┗┗┛┛┗  by absolutepraya\033[0m
 
 Provides steps to check if a number is prime using the trial 
 division method. The number of tries is also shown.
 
-————————————————————————————————————————————————————————————
-""")
+———— I N P U T ————————————————————————————————————————————————————————
+
+Enter a positive integer.""")
 
 # Command line input
 if len(sys.argv) > 1:
@@ -19,10 +20,10 @@ if len(sys.argv) > 1:
     print(f"Number =  {num}")
 # Input inside the program
 else:
-    print("Enter a number.")
     num = int(input("Number = "))
-print("""
-————————————————————————————————————————————————————————————
+print(f"""\033[33mTrial Division of {num}\033[0m
+
+———— S T E P S ————————————————————————————————————————————————————————
 """)
 
 # Prime numbers list using Sieve of Eratosthenes algorithm
@@ -62,7 +63,7 @@ Number of tries needed: {tries}
 Maximum number of tries: {len(prime_lst)}
 """)
 if prime:
-    print(f"""∴ {num} is a prime number.
-  It's not divisible by any of the prime numbers from 2 to {num_root}.""")
+    print(f"""\033[33m∴ {num} is a prime number.
+  It's not divisible by any of the prime numbers from 2 to {num_root}.\033[0m""")
 else:
-    print(f"∴ {num} is NOT a prime number, it's divisible by {prime_num}.")
+    print(f"\033[33m∴ {num} is NOT a prime number, it's divisible by {prime_num}.\033[0m")
