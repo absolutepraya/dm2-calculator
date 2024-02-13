@@ -20,7 +20,7 @@ if len(sys.argv) > 1:
 # Input inside the program
 else:
     nums = [int(num) for num in input("x, y, z, ... = ").split(",")]
-print(f"""\033[33mGCD({', '.join(map(str, nums))})\033[0m
+print(f"""\033[33mLCM({', '.join(map(str, nums))})\033[0m
 
 ———— S T E P S ————————————————————————————————————————————————————————
 
