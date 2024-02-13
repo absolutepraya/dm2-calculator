@@ -1,4 +1,4 @@
-# Version: 1.2
+# Version: 1.20
 
 import sys
 from functools import reduce
