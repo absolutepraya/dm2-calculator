@@ -1,16 +1,16 @@
-# Version: 1.0
+# Version: 1.2
 
 import sys
 from functools import reduce
 
-print("""┓ ┏┓┳┳┓
+print("""\033[32m┓ ┏┓┳┳┓
 ┃ ┃ ┃┃┃
-┗┛┗┛┛ ┗  by absolutepraya
+┗┛┗┛┛ ┗  by absolutepraya\033[0m
 
 LCM calculator that can take unlimited amount of numbers,
 and shows the steps. For example, you can do LCM(x, y, z, ...).
 
-————————————————————————————————————————————————————————————
+———— I N P U T ————————————————————————————————————————————————————————
 
 Enter the numbers for LCM(x, y, z, ...). Divide them with comma.""")
 
@@ -20,9 +20,9 @@ if len(sys.argv) > 1:
 # Input inside the program
 else:
     nums = [int(num) for num in input("x, y, z, ... = ").split(",")]
-print(f"""GCD({', '.join(map(str, nums))})
+print(f"""\033[33mGCD({', '.join(map(str, nums))})\033[0m
 
-————————————————————————————————————————————————————————————
+———— S T E P S ————————————————————————————————————————————————————————
 
 ### SOLVING STEPS
 
@@ -84,4 +84,4 @@ common_factor_value = reduce(lambda x, y: x * y, [factor ** count for factor, co
 # Print LCM
 print(f"{lcm_str} = {common_factor_str}\n" +
 f"{' ' * len(lcm_str)}= {common_factor_value}" +
-f"\n\n∴ Therefore, the LCM of the numbers is {common_factor_value}.")
+f"\n\n\033[33m∴ Therefore, the LCM of the numbers is {common_factor_value}.\033[0m")
