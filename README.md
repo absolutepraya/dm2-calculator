@@ -1,12 +1,15 @@
 # Discrete Mathematics 2 Calculator with Steps
 
 This is not just a simple calculator, but a calculator that also provide ***step-by-step solutions*** (might as well call it a solver) for the following topics:
+
 - Modular Exponentiation
 - Trial Division
 - GCD with Pairwise Prime (unlimited amount of numbers can be calculated)
 - GCD Euclidean's Algorithm
 - GCD Benzout's Theorem
 - LCM (unlimited amount of numbers can be calculated)
+- Polynomial Congruence
+- Chinese Remainder Theorem (CRT)
 
 and more to come.
 
@@ -46,10 +49,13 @@ or [check the command line arguments](#command-line-arguments)
 `python GDC_Euclidean.py [number1] [number2]`  
 
 - For GCD Benzout's Theorem calculator  
-`python GDC_Benzout.py [number1] [number2]`   
+`python GDC_Benzout.py [number1] [number2]`
 
 - For LCM calculator  
-`python LCM.py [number1] [number2] [number3] ...` 
+`python LCM.py [number1] [number2] [number3] ...`
+
+- For Polynomial Congruence calculator, the supported form is ax^2 + bx + c ≡ 0 (mod m)
+`python Polynomial_Congruence.py [a] [b] [c] [m]`
 
 - For Chinese Remainder Theorem (CRT) calculator,  the supported form is x ≡ a (mod n)  
 `python CRT.py a1,n1 a2,n2 a3,n3 ...`
@@ -68,9 +74,9 @@ or [check the command line arguments](#command-line-arguments)
 |---------|---------|
 | ![GCD Bezout's Theorem](README/gcd_bezout.png) | ![LCM](README/lcm.png) |
 
-| **Chinese Remainder Theorem (CRT)** |
-|---------|
-| ![CRT](README/crt.png) |
+| **Polynomial Congruence** | **Chinese Remainder Theorem (CRT)** |
+|---------|---------|
+| ![Polynomial Congruence](README/polynomial_congruence.png) | ![Chinese Remainder Theorem (CRT)](README/crt.png) |
 
 ## Future Plan
 
