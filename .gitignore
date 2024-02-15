@@ -1,11 +1,13 @@
 # Tests
-Any.py
-Any2.py
-Any3.py
+Any/
 
-# Unreleaseds
-Calculators
-calculator.py
+# Chaces
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Unreleased Files (None)
 
 # Resources
 Resource.txt
