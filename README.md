@@ -20,6 +20,13 @@ and more to come.
 ✅ No need to use internet connection  
 ✅ No need to install any dependencies other than Python
 
+**Demo:**
+<div align="center">
+
+![Demo](README/demo.gif)
+
+</div>
+
 [Check the screenshots](#screenshots)
 
 The main purpose of this project is to help students who are studying Discrete Mathematics 2 to understand the steps of each calculation, or teachers who want to provide a better understanding for their students.
