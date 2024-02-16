@@ -23,7 +23,7 @@ and more to come.
 **Demo:**
 <div align="center">
 
-![Demo](README/demo.gif)
+![Demo](README/demo_small.gif)
 
 </div>
 
