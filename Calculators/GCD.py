@@ -1,4 +1,4 @@
-# Version: 1.52
+# Version: 1.53
 
 import sys
 import math
@@ -7,15 +7,19 @@ from . import Utils
 
 def DESC():
     return """GCD calculator that can take unlimited amount of numbers,
-and shows the steps. For example, you can do GCD(x, y, z, ...)."""
+and shows the steps (For example, you can do GCD(x, y, z, ...)). 
+The method used is by finding the prime roots of the number, and find the 
+maximum amount of each square root among the numbers."""
 
 def PROGRAM():
     print("""\033[32m┏┓┏┓┳┓
 ┃┓┃ ┃┃
 ┗┛┗┛┻┛  by absolutepraya\033[0m
 
-GCD calculator that can take unlimited amount of numbers, 
-and shows the steps. For example, you can do GCD(x, y, z, ...).
+GCD calculator that can take unlimited amount of numbers,
+and shows the steps (For example, you can do GCD(x, y, z, ...)). 
+The method used is by finding the prime roots of the number, and find the 
+maximum amount of each square root among the numbers.
 
 ———— I N P U T ————————————————————————————————————————————————————————
 
