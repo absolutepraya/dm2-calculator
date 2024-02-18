@@ -1,12 +1,12 @@
-# Version: 1.25
+# Version: 1.26
 
 import sys
 from . import Utils
 
 def DESC():
-    return """This Modular Exponentiation calculator not just calculates the modular 
-exponentiation result, but but also shows the steps of the calculation. 
-The steps are shown in a table format."""
+    return """This Modular Exponentiation calculator does not just 
+return the result, but also shows the steps of the calculation using
+Modular Exponentiation algorithm. The steps are shown in a table format."""
 
 def PROGRAM():
     print("""\033[32m┳┳┓   ┓  ┓      ┏┓             •   •    
@@ -14,9 +14,9 @@ def PROGRAM():
 ┛ ┗┗┛┗┻┗┻┗┗┻┛   ┗┛┛┗┣┛┗┛┛┗┗ ┛┗┗┗┗┻┗┗┗┛┛┗  by absolutepraya
                     ┛
 \033[0m
-This Modular Exponentiation calculator not just calculates the modular 
-exponentiation result, but but also shows the steps of the calculation. 
-The steps are shown in a table format.
+This Modular Exponentiation calculator does not just 
+return the result, but also shows the steps of the calculation using
+Modular Exponentiation algorithm. The steps are shown in a table format.
 
 ———— I N P U T ————————————————————————————————————————————————————————
 
