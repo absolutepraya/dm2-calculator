@@ -1,4 +1,4 @@
-# Version: 1.20
+# Version: 1.21
 
 import sys
 from functools import reduce
@@ -6,7 +6,9 @@ from . import Utils
 
 def DESC():
     return """LCM calculator that can take unlimited amount of numbers,
-and shows the steps. For example, you can do LCM(x, y, z, ...)."""
+and shows the steps (For example, you can do LCM(x, y, z, ...)). 
+The method used is by finding the prime roots of the number, and find the 
+minimum amount of each square root among the numbers."""
 
 def PROGRAM():
     print("""\033[32m┓ ┏┓┳┳┓
@@ -14,7 +16,9 @@ def PROGRAM():
 ┗┛┗┛┛ ┗  by absolutepraya\033[0m
 
 LCM calculator that can take unlimited amount of numbers,
-and shows the steps. For example, you can do LCM(x, y, z, ...).
+and shows the steps (For example, you can do LCM(x, y, z, ...)). 
+The method used is by finding the prime roots of the number, and find the 
+minimum amount of each square root among the numbers.
 
 ———— I N P U T ————————————————————————————————————————————————————————
 
