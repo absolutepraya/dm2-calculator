@@ -1,6 +1,6 @@
 import sys, subprocess
 from . import Modular_Exponentiation, Trial_Division, GCD, GCD_Euclidean
-from . import GCD_Bezout, LCM, Polynomial_Congruence, CRT
+from . import GCD_Bezout, LCM, Polynomial_Congruence, CRT, Back_Subtitution
 
 # Clear terminal
 def CLEAR_TERMINAL():
@@ -27,6 +27,8 @@ def GET_CALC_DESC(num):
         return Polynomial_Congruence.DESC()
     elif num == "8":
         return CRT.DESC()
+    elif num == "9":
+        return Back_Subtitution.DESC()
     else:
         return False
 

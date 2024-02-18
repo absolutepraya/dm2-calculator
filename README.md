@@ -4,12 +4,13 @@ This is not just a simple calculator, but a calculator that also provide ***step
 
 1. Modular Exponentiation
 2. Trial Division
-3. GCD with Pairwise Prime (unlimited amount of numbers can be calculated)
+3. GCD + Pairwise Prime
 4. GCD Euclidean's Algorithm
 5. GCD Benzout's Theorem
-6. LCM (unlimited amount of numbers can be calculated)
+6. LCM
 7. Polynomial Congruence
 8. Chinese Remainder Theorem (CRT)
+9. Back Substitution
 
 and more to come.
 
@@ -70,6 +71,10 @@ Please do note that this project is still in its early stage, so there might be 
 | **Polynomial Congruence** | **Chinese Remainder Theorem (CRT)** |
 |---------|---------|
 | ![Polynomial Congruence](README/polynomial_congruence.png) | ![Chinese Remainder Theorem (CRT)](README/crt.png) |
+
+| **Back Substitution** | **—** |
+|---------|---------|
+| ![Back Substitution](README/back_sub.png) | ![(Empty)](README/empty.png) |
 
 ## Future Plan
 

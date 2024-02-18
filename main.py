@@ -2,7 +2,7 @@
 
 from Calculators import Utils
 from Calculators import Modular_Exponentiation, Trial_Division, GCD, GCD_Euclidean
-from Calculators import GCD_Bezout, LCM, Polynomial_Congruence, CRT
+from Calculators import GCD_Bezout, LCM, Polynomial_Congruence, CRT, Back_Subtitution
 
 # Header
 def header(extra="Enter a calculator number or command."):
@@ -17,12 +17,13 @@ def header(extra="Enter a calculator number or command."):
 >>> Available calculators:
 1. Modular Exponentiation
 2. Trial Division
-3. GCD (unlimited amount of numbers can be calculated)
+3. GCD with Pairwise Prime
 4. GCD Euclidean's Algorithm
 5. GCD Benzout's Theorem
 6. LCM (unlimited amount of numbers can be calculated)
 7. Polynomial Congruence
 8. Chinese Remainder Theorem (CRT)
+9. Back Substitution
 
 >>> Available commands:
 - "h <calculator number>" or "help <calculator number>"
@@ -107,6 +108,9 @@ Enter a calculator number or command.""")
             elif choice == "8":
                 Utils.CLEAR_TERMINAL()
                 CRT.PROGRAM()
+            elif choice == "9":
+                Utils.CLEAR_TERMINAL()
+                Back_Subtitution.PROGRAM()
             else:
                 invalid_count += 1
                 continue
