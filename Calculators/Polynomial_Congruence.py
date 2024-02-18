@@ -1,4 +1,4 @@
-# Version: 1.00
+# Version: 1.01
 
 import sys
 from . import Utils
@@ -14,7 +14,7 @@ def PROGRAM():
     print("""\033[32m┏┓  ┓         •  ┓  ┏┓                 
 ┃┃┏┓┃┓┏┏┓┏┓┏┳┓┓┏┓┃  ┃ ┏┓┏┓┏┓┏┓┓┏┏┓┏┓┏┏┓
 ┣┛┗┛┗┗┫┛┗┗┛┛┗┗┗┗┻┗  ┗┛┗┛┛┗┗┫┛ ┗┻┗ ┛┗┗┗   by absolutepraya
-    ┛                    ┛           
+┛                    ┛           
 \033[0m
 This Polynomial Congruence Calculator will solve the quadratic congruence 
 of the form ax^2 + bx + c ≡ 0 (mod m) and provide the steps to solve it. 
@@ -25,7 +25,7 @@ will be shown in table format.
 ———— I N P U T ————————————————————————————————————————————————————————
 
 Enter the a, b, c, d of polynomial congruence in the form of 
-ax^2 + bx + c ≡ 0 (mod m). Seperate them with comma.""")
+ax^2 + bx + c ≡ 0 (mod m).""")
 
     # Command line input
     if len(sys.argv) > 1:
