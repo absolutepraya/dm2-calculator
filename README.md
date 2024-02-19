@@ -39,6 +39,8 @@ Please do note that this project is still in its early stage, so there might be 
 - Python 3.7 or higher
 - Python Standard Library
 
+If you don't have Python installed, you can download it from [Python's official website](https://www.python.org/downloads/).
+
 ## How to Use
 
 1. Open your terminal and clone the repository  
@@ -49,6 +51,10 @@ Please do note that this project is still in its early stage, so there might be 
 
 3. Run the main file, then you can choose which calculator you want to use inside it  
 `python main.py`
+
+Remember that the `main.py` file must be in the same directory as the `Calculators` directory.
+
+If you encounter any error when running the `main.py` file, try redownloading the repository, and run the main file without any modification.
 
 ## Screenshots
 
