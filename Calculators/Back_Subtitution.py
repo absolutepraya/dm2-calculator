@@ -1,6 +1,3 @@
-# Version: 1.00
-
-import sys
 from . import Utils
 
 
@@ -10,7 +7,8 @@ method, so it does not need for the modulo condition to be a prime
 relative pair. The supported congruence form is x ≡ a (mod m)."""
 
 
-def PROGRAM():
+@Utils.HANDLE_CALC_ERRORS
+def PROGRAM(invalid=False):
     print(
         """\033[32m┳┓   ┓   ┏┓  ┓  •    •    
 ┣┫┏┓┏┃┏  ┗┓┓┏┣┓╋┓╋┓┏╋┓┏┓┏┓
@@ -22,28 +20,33 @@ relative pair. The supported congruence form is x ≡ a (mod m).
 
 ——— I N P U T ————————————————————————————————————————————————————————
 
-How many congruences do you want to solve?"""
+How many congruences do you want to solve?""" 
++ ("\n\n\033[31mInvalid input. Please enter integers only.\033[0m\n" if invalid else "")
     )
 
-    # Command line arguments
-    if len(sys.argv) > 1:
-        print(f"Number of congruences = {len(sys.argv[1:])}")
-    # Input inside the program
+    n = input("Number of congruences = ")
+
+    # Check if the input is an integer
+    if not Utils.CHECK_INT_INPUT(str(n)):
+        Utils.CLEAR_TERMINAL()
+        PROGRAM(invalid=True)
+        return
     else:
-        n = int(input("Number of congruences = "))
+        n = int(n)
 
     print("\nInput a and m for each congruence x ≡ a (mod m). Divide them with comma.")
-    # Command line arguments
-    if len(sys.argv) > 1:
-        congruences = [tuple(map(int, t.split(","))) for t in sys.argv[1:]]
-        for i, (a, m) in enumerate(congruences):
-            print(f"a{i+1}, m{i+1} = {a}, {m}")
-    # Input inside the program
+    congruences = []
+    for i in range(n):
+        a, m = map(str, input(f"a{i+1}, m{i+1} = ").replace(" ", "").split(","))
+        congruences.append((a, m))
+    
+    # Check if all inputs are integers
+    if not Utils.CHECK_INT_INPUT(*[a for a, m in congruences]):
+        Utils.CLEAR_TERMINAL()
+        PROGRAM(invalid=True)
+        return
     else:
-        congruences = []
-        for i in range(n):
-            a, m = map(int, input(f"a{i+1}, m{i+1} = ").split(","))
-            congruences.append((a, m))
+        congruences = [(int(a), int(m)) for a, m in congruences]
 
     print(f"""\n\033[33mSystem of linear congruences:""")
     for i, (a, m) in enumerate(congruences):
