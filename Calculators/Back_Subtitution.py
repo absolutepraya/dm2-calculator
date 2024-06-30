@@ -45,7 +45,7 @@ How many congruences do you want to solve? (CTRL+C to quit)"""
         congruences.append((a, m))
 
     # Check if all inputs are integers
-    if not Utils.CHECK_INT_INPUT(*[a for a, m in congruences]):
+    if not Utils.CHECK_INT_INPUT(*[item for a, m in congruences for item in (a, m)]):
         Utils.CLEAR_TERMINAL()
         PROGRAM(invalid=True)
         return
