@@ -82,8 +82,12 @@ If you encounter any error when running the `main.py` file, try redownloading th
 |---------|---------|
 | ![Back Substitution](README/back_sub.png) | ![(Empty)](README/empty.png) |
 
-## Future Plan
+## Change Log
+
+Version 1.70:
+- Added error handlers and input validations everywhere
+
+## Future Updates (To-Do)
 
 - Create more calculators along the time
-- Add input validation for each calculator
-- Add txt log file to store the history of each calculation
+- Add .txt log file to store the history of each calculation
