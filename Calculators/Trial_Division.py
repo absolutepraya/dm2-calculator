@@ -1,7 +1,4 @@
-# Version: 1.40
-
 import math
-import sys
 from . import Utils
 
 
@@ -10,7 +7,8 @@ def DESC():
 division method. The number of tries is also shown."""
 
 
-def PROGRAM():
+@Utils.HANDLE_CALC_ERRORS
+def PROGRAM(invalid=False):
     print(
         """\033[32m┏┳┓  •  ┓  ┳┓•  • •    
 ┃ ┏┓┓┏┓┃  ┃┃┓┓┏┓┏┓┏┓┏┓
@@ -21,16 +19,24 @@ division method. The number of tries is also shown.
 
 ———— I N P U T ————————————————————————————————————————————————————————
 
-Enter a positive integer."""
+Enter a positive integer. (CTRL+C to quit)"""
+        + (
+            "\n\n\033[31mInvalid input. Please enter integers only.\033[0m\n"
+            if invalid
+            else ""
+        )
     )
 
-    # Command line input
-    if len(sys.argv) > 1:
-        num = int(sys.argv[1])
-        print(f"Number =  {num}")
-    # Input inside the program
+    num = input("Number = ")
+
+    # Check if the input is an integer
+    if not Utils.CHECK_INT_INPUT(num):
+        Utils.CLEAR_TERMINAL()
+        PROGRAM(invalid=True)
+        return
     else:
-        num = int(input("Number = "))
+        num = int(num)
+
     print(
         f"""\033[33mTrial Division of {num}\033[0m
 
