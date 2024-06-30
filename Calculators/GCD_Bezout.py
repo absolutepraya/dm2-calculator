@@ -1,6 +1,3 @@
-# Verison: 1.30
-
-import sys
 from . import Utils
 
 
@@ -9,7 +6,8 @@ def DESC():
 linear number combination (GCD(x, y) = m * x + n * y)."""
 
 
-def PROGRAM():
+@Utils.HANDLE_CALC_ERRORS
+def PROGRAM(invalid=False):
     print(
         """\033[32m┳┓          ┏┓┏┓┳┓
 ┣┫┏┓┓┏┓┓┏╋  ┃┓┃ ┃┃
@@ -20,17 +18,26 @@ linear number combination (GCD(x, y) = m * x + n * y).
 
 ———— I N P U T ————————————————————————————————————————————————————————
 
-Enter two numbers for GCD(x, y)."""
+Enter two numbers for GCD(x, y). (CTRL+C to quit)"""
+        + (
+            "\n\n\033[31mInvalid input. Please enter integers only.\033[0m\n"
+            if invalid
+            else ""
+        )
     )
 
-    # Command line arguments
-    if len(sys.argv) > 1:
-        num1 = int(sys.argv[1])
-        num2 = int(sys.argv[2])
-    # Input inside the program
+    num1 = input("x = ")
+    num2 = input("y = ")
+
+    # Check if the input is an integer
+    if not Utils.CHECK_INT_INPUT(num1, num2):
+        Utils.CLEAR_TERMINAL()
+        PROGRAM(invalid=True)
+        return
     else:
-        num1 = int(input("x = "))
-        num2 = int(input("y = "))
+        num1 = int(num1)
+        num2 = int(num2)
+
     print(
         f"""\033[33mGCD({num1}, {num2})\033[0m
 
