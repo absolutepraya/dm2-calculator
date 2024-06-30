@@ -21,7 +21,7 @@ Modular Exponentiation algorithm. The steps are shown in a table format.
 
 ———— I N P U T ————————————————————————————————————————————————————————
 
-Enter the base, exponent, and mod of the equation."""
+Enter the base, exponent, and mod of the equation. (CTRL+C to quit)"""
         + (
             "\n\n\033[31mInvalid input. Please enter integers only.\033[0m\n"
             if invalid

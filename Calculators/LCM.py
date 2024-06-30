@@ -23,7 +23,7 @@ minimum amount of each square root among the numbers.
 
 ———— I N P U T ————————————————————————————————————————————————————————
 
-Enter the numbers for LCM(x, y, z, ...). Divide them with comma."""
+Enter the numbers for LCM(x, y, z, ...). Divide them with comma. (CTRL+C to quit)"""
         + (
             "\n\n\033[31mInvalid input. Please enter integers only.\033[0m\n"
             if invalid
