@@ -1,6 +1,3 @@
-# Version: 1.53
-
-import sys
 import math
 from functools import reduce
 from . import Utils
@@ -13,7 +10,8 @@ The method used is by finding the prime roots of the number, and find the
 maximum amount of each square root among the numbers."""
 
 
-def PROGRAM():
+@Utils.HANDLE_CALC_ERRORS
+def PROGRAM(invalid=False):
     print(
         """\033[32m┏┓┏┓┳┓
 ┃┓┃ ┃┃
@@ -27,14 +25,19 @@ maximum amount of each square root among the numbers.
 ———— I N P U T ————————————————————————————————————————————————————————
 
 Enter the numbers for GCD(x, y, z, ...). Divide them with comma"""
++ ("\n\n\033[31mInvalid input. Please enter integers only.\033[0m\n" if invalid else "")
     )
 
-    # Command line arguments
-    if len(sys.argv) > 1:
-        nums = [int(num) for num in sys.argv[1:]]
-    # Input inside the program
+    nums = [str(num) for num in input("x, y, z, ... = ").replace(" ", "").split(",")]
+
+    # Check if all inputs are integers
+    if not Utils.CHECK_INT_INPUT(*nums):
+        Utils.CLEAR_TERMINAL()
+        PROGRAM(invalid=True)
+        return
     else:
-        nums = [int(num) for num in input("x, y, z, ... = ").split(",")]
+        nums = list(map(int, nums))
+
     print(
         f"""\033[33mGCD({', '.join(map(str, nums))})\033[0m
 
