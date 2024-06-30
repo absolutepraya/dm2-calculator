@@ -1,5 +1,5 @@
 # Made by absolutepraya (github.com/absolutepraya)
-# Version 1.80
+# Version 1.70
 
 from Calculators import (
     Modular_Exponentiation,
