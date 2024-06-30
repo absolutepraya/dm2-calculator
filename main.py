@@ -1,12 +1,24 @@
-# Made by absolutepraya
+# Made by absolutepraya (github.com/absolutepraya)
+# Version 1.70
 
+from Calculators import (
+    Modular_Exponentiation,
+    Trial_Division,
+    GCD,
+    GCD_Euclidean,
+    GCD_Bezout,
+    LCM,
+    Polynomial_Congruence,
+    CRT,
+    Back_Subtitution,
+)
 from Calculators import Utils
-from Calculators import Modular_Exponentiation, Trial_Division, GCD, GCD_Euclidean
-from Calculators import GCD_Bezout, LCM, Polynomial_Congruence, CRT, Back_Subtitution
+
 
 # Header
 def header(extra="Enter a calculator number or command."):
-    print("""\033[32m╒═══════════════════════════╕
+    print(
+        """\033[32m╒═══════════════════════════╕
   ┳┓┳┳┓┏┓  ┏┓  ┓   ┓       
   ┃┃┃┃┃┏┛  ┃ ┏┓┃┏┓┏┃┏┓╋┏┓┏┓  
   ┻┛┛ ┗┗━  ┗┛┗┻┗┗┗┻┗┗┻┗┗┛┛    by absolutepraya
@@ -30,15 +42,45 @@ def header(extra="Enter a calculator number or command."):
    ↪ Show the brief description of the calculator
 - "q" or "quit"
    ↪ Quit the program
+- "CTRL + C"
+   ↪ Force quit the program everywhere
 
 ———— INPUT ————————————————————————————————————————————————————————
 
-""" + extra)
+"""
+        + extra
+    )
+
+# Calculator number and command
+def GET_CALC_DESC(num):
+    if num == "1":
+        return Modular_Exponentiation.DESC()
+    elif num == "2":
+        return Trial_Division.DESC()
+    elif num == "3":
+        return GCD.DESC()
+    elif num == "4":
+        return GCD_Euclidean.DESC()
+    elif num == "5":
+        return GCD_Bezout.DESC()
+    elif num == "6":
+        return LCM.DESC()
+    elif num == "7":
+        return Polynomial_Congruence.DESC()
+    elif num == "8":
+        return CRT.DESC()
+    elif num == "9":
+        return Back_Subtitution.DESC()
+    else:
+        return False
+
 
 invalid_count = 0
 desc = ""
 
+
 # Main
+@Utils.HANDLE_CALC_ERRORS
 def main():
     global invalid_count, desc
 
@@ -46,17 +88,21 @@ def main():
         Utils.CLEAR_TERMINAL()
 
         if invalid_count == 0 and desc:
-            header(f"""\033[34mDesc:\033[0m
+            header(
+                f"""\033[34mDesc:\033[0m
 {desc} 
 
-Enter a calculator number or command.""")
+Enter a calculator number or command."""
+            )
         elif invalid_count == 0 and not desc:
             header()
         else:
-            header("""\033[31mPlease enter a valid input.\033[0m
+            header(
+                """\033[31mPlease enter a valid input.\033[0m
 
-Enter a calculator number or command.""")
-    
+Enter a calculator number or command."""
+            )
+
         # Input
         choice = input("Input: ").lower().strip()
         print()
@@ -68,15 +114,15 @@ Enter a calculator number or command.""")
         elif choice.startswith("h") or choice.startswith("help"):
             choice_list = choice.split()
 
-            if len(choice_list) != 2: # Invalid input
+            if len(choice_list) != 2:  # Invalid input
                 invalid_count += 1
                 continue
 
-            desc = Utils.GET_CALC_DESC(choice_list[1])
+            desc = GET_CALC_DESC(choice_list[1])
 
             if desc:
                 invalid_count = 0
-            else: # Invalid input
+            else:  # Invalid input
                 invalid_count += 1
             continue
 
@@ -114,6 +160,7 @@ Enter a calculator number or command.""")
             else:
                 invalid_count += 1
                 continue
+
 
 if __name__ == "__main__":
     main()
