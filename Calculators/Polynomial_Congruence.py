@@ -1,6 +1,3 @@
-# Version: 1.01
-
-import sys
 from . import Utils
 
 
@@ -12,7 +9,8 @@ of x from 0 to m-1 and checking if the congruence is satisfied. The steps
 will be shown in table format."""
 
 
-def PROGRAM():
+@Utils.HANDLE_CALC_ERRORS
+def PROGRAM(invalid=False):
     print(
         """\033[32m┏┓  ┓         •  ┓  ┏┓                 
 ┃┃┏┓┃┓┏┏┓┏┓┏┳┓┓┏┓┃  ┃ ┏┓┏┓┏┓┏┓┓┏┏┓┏┓┏┏┓
@@ -28,26 +26,32 @@ will be shown in table format.
 ———— I N P U T ————————————————————————————————————————————————————————
 
 Enter the a, b, c, d of polynomial congruence in the form of 
-ax^2 + bx + c ≡ 0 (mod m)."""
+ax^2 + bx + c ≡ 0 (mod m). (CTRL+C to quit)"""
+        + (
+            "\n\n\033[31mInvalid input. Please enter integers only.\033[0m\n"
+            if invalid
+            else ""
+        )
     )
 
-    # Command line input
-    if len(sys.argv) > 1:
-        a, b, c, m = map(int, sys.argv[1].split(","))
-        print(
-            f"""a = {a}
-b = {b}
-c = {c}
-m = {m}"""
-        )
+    a = input("a = ")
+    b = input("b = ")
+    c = input("c = ")
+    m = input("m = ")
+
+    # Check if the input is an integer
+    if not Utils.CHECK_INT_INPUT(a, b, c, m):
+        Utils.CLEAR_TERMINAL()
+        PROGRAM(invalid=True)
+        return
     else:
-        # Input inside the program
-        a = int(input("a = "))
-        b = int(input("b = "))
-        c = int(input("c = "))
-        m = int(input("m = "))
-        print(
-            f"""\033[33m{a}x^2 + {b}x + {c} ≡ 0 (mod {m})\033[0m
+        a = int(a)
+        b = int(b)
+        c = int(c)
+        m = int(m)
+    
+    print(
+        f"""\033[33m{a}x^2 + {b}x + {c} ≡ 0 (mod {m})\033[0m
 
 ———— S T E P S ————————————————————————————————————————————————————————
 
