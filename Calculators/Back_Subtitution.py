@@ -20,8 +20,12 @@ relative pair. The supported congruence form is x ≡ a (mod m).
 
 ——— I N P U T ————————————————————————————————————————————————————————
 
-How many congruences do you want to solve? (CTRL+C to quit)""" 
-+ ("\n\n\033[31mInvalid input. Please enter integers only.\033[0m\n" if invalid else "")
+How many congruences do you want to solve? (CTRL+C to quit)"""
+        + (
+            "\n\n\033[31mInvalid input. Please enter integers only.\033[0m\n"
+            if invalid
+            else ""
+        )
     )
 
     n = input("Number of congruences = ")
@@ -39,7 +43,7 @@ How many congruences do you want to solve? (CTRL+C to quit)"""
     for i in range(n):
         a, m = map(str, input(f"a{i+1}, m{i+1} = ").replace(" ", "").split(","))
         congruences.append((a, m))
-    
+
     # Check if all inputs are integers
     if not Utils.CHECK_INT_INPUT(*[a for a, m in congruences]):
         Utils.CLEAR_TERMINAL()
