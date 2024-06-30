@@ -1,6 +1,5 @@
 import sys, subprocess
-from . import Modular_Exponentiation, Trial_Division, GCD, GCD_Euclidean
-from . import GCD_Bezout, LCM, Polynomial_Congruence, CRT, Back_Subtitution
+import time
 
 
 # Clear terminal
@@ -9,30 +8,6 @@ def CLEAR_TERMINAL():
         subprocess.run("cls", shell=True)
     elif sys.platform == "linux" or sys.platform == "darwin":
         subprocess.run("clear", shell=True)
-
-
-# Get calculator description
-def GET_CALC_DESC(num):
-    if num == "1":
-        return Modular_Exponentiation.DESC()
-    elif num == "2":
-        return Trial_Division.DESC()
-    elif num == "3":
-        return GCD.DESC()
-    elif num == "4":
-        return GCD_Euclidean.DESC()
-    elif num == "5":
-        return GCD_Bezout.DESC()
-    elif num == "6":
-        return LCM.DESC()
-    elif num == "7":
-        return Polynomial_Congruence.DESC()
-    elif num == "8":
-        return CRT.DESC()
-    elif num == "9":
-        return Back_Subtitution.DESC()
-    else:
-        return False
 
 
 # Confirmation before exiting calculator
@@ -49,20 +24,25 @@ def CONFIRM_EXIT():
         return CONFIRM_EXIT()
 
 
-# Integer input validation
-def INPUT_INT(msg):
-    num = input(msg)
-    if not num.isdecimal():
-        print("\n\033[31mPlease enter a valid integer.\033[0m")
-        return
-    return num
+# Handle general calculation errors
+def HANDLE_CALC_ERRORS(func):
+    def wrapper(*args, **kwargs):
+        try:
+            return func(*args, **kwargs)
+        except (KeyboardInterrupt, EOFError):
+            print("\n\n\033[31mExiting...\033[0m")
+            # Timeout 1 second before exiting
+            time.sleep(1)
+        except Exception as e:
+            print(f"\n\n\033[31mError: {e}\nExiting...\033[0m")
+            # Timeout 1 second before exiting
+            time.sleep(1)
+    return wrapper
 
 
-# Positive integer input validation
-def INPUT_INT_POS(num, down_bound=0):
-    if not num.isdecimal() or int(num) <= down_bound:
-        print(
-            f"\033[31mPlease enter a valid positive integer greater than {down_bound}.\033[0m"
-        )
-        return
-    return num
+# Check all input variables if they are integers
+def CHECK_INT_INPUT(*args):
+    for arg in args:
+        if not arg.isdecimal():
+            return False
+    return True
