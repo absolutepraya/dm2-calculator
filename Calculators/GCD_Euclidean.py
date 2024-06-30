@@ -3,12 +3,15 @@
 import sys
 from . import Utils
 
+
 def DESC():
     return """Shows the steps of the Euclidean algorithm to find the GCD
 of two numbers."""
 
+
 def PROGRAM():
-    print("""\033[32m┏┓   ┓• ┓        ┏┓┏┓┳┓
+    print(
+        """\033[32m┏┓   ┓• ┓        ┏┓┏┓┳┓
 ┣ ┓┏┏┃┓┏┫┏┓┏┓┏┓  ┃┓┃ ┃┃
 ┗┛┗┻┗┗┗┗┻┗ ┗┻┛┗  ┗┛┗┛┻┛  by absolutepraya\033[0m
 
@@ -17,7 +20,8 @@ of two numbers.
 
 ———— I N P U T ————————————————————————————————————————————————————————
 
-Enter two numbers for GCD(x, y).""")
+Enter two numbers for GCD(x, y)."""
+    )
 
     # Command line arguments
     if len(sys.argv) > 1:
@@ -27,12 +31,14 @@ Enter two numbers for GCD(x, y).""")
     else:
         num1 = int(input("x = "))
         num2 = int(input("y = "))
-    print(f"""\033[33mGCD({num1}, {num2})\033[0m
+    print(
+        f"""\033[33mGCD({num1}, {num2})\033[0m
 
 ———— S T E P S ————————————————————————————————————————————————————————
 
 ### SOLVING STEPS
-""")
+"""
+    )
 
     # Euclidean algorithm
     x = num1

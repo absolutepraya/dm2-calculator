@@ -2,12 +2,14 @@ import sys, subprocess
 from . import Modular_Exponentiation, Trial_Division, GCD, GCD_Euclidean
 from . import GCD_Bezout, LCM, Polynomial_Congruence, CRT, Back_Subtitution
 
+
 # Clear terminal
 def CLEAR_TERMINAL():
     if sys.platform == "win32":
         subprocess.run("cls", shell=True)
     elif sys.platform == "linux" or sys.platform == "darwin":
         subprocess.run("clear", shell=True)
+
 
 # Get calculator description
 def GET_CALC_DESC(num):
@@ -32,9 +34,10 @@ def GET_CALC_DESC(num):
     else:
         return False
 
+
 # Confirmation before exiting calculator
 def CONFIRM_EXIT():
-    print("\nType in \"a\" to reset the calculator, or \"q\" to quit.")
+    print('\nType in "a" to reset the calculator, or "q" to quit.')
     choice = input("Input: ")
     if choice.lower() == "q":
         return True
@@ -45,6 +48,7 @@ def CONFIRM_EXIT():
         print("\n\033[31mInvalid input.\033[0m")
         return CONFIRM_EXIT()
 
+
 # Integer input validation
 def INPUT_INT(msg):
     num = input(msg)
@@ -53,9 +57,12 @@ def INPUT_INT(msg):
         return
     return num
 
+
 # Positive integer input validation
 def INPUT_INT_POS(num, down_bound=0):
     if not num.isdecimal() or int(num) <= down_bound:
-        print(f"\033[31mPlease enter a valid positive integer greater than {down_bound}.\033[0m")
+        print(
+            f"\033[31mPlease enter a valid positive integer greater than {down_bound}.\033[0m"
+        )
         return
     return num
