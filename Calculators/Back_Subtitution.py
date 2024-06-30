@@ -20,7 +20,7 @@ relative pair. The supported congruence form is x ≡ a (mod m).
 
 ——— I N P U T ————————————————————————————————————————————————————————
 
-How many congruences do you want to solve?""" 
+How many congruences do you want to solve? (CTRL+C to quit)""" 
 + ("\n\n\033[31mInvalid input. Please enter integers only.\033[0m\n" if invalid else "")
     )
 
