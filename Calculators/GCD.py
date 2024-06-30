@@ -24,8 +24,12 @@ maximum amount of each square root among the numbers.
 
 ———— I N P U T ————————————————————————————————————————————————————————
 
-Enter the numbers for GCD(x, y, z, ...). Divide them with comma"""
-+ ("\n\n\033[31mInvalid input. Please enter integers only.\033[0m\n" if invalid else "")
+Enter the numbers for GCD(x, y, z, ...). Divide them with comma. (CTRL+C to quit)"""
+        + (
+            "\n\n\033[31mInvalid input. Please enter integers only.\033[0m\n"
+            if invalid
+            else ""
+        )
     )
 
     nums = [str(num) for num in input("x, y, z, ... = ").replace(" ", "").split(",")]
