@@ -1,6 +1,3 @@
-# Version: 1.26
-
-import sys
 from . import Utils
 
 
@@ -10,7 +7,8 @@ return the result, but also shows the steps of the calculation using
 Modular Exponentiation algorithm. The steps are shown in a table format."""
 
 
-def PROGRAM():
+@Utils.HANDLE_CALC_ERRORS
+def PROGRAM(invalid=False):
     print(
         """\033[32m┳┳┓   ┓  ┓      ┏┓             •   •    
 ┃┃┃┏┓┏┫┓┏┃┏┓┏┓  ┣ ┓┏┏┓┏┓┏┓┏┓┏┓╋┓┏┓╋┓┏┓┏┓
@@ -24,23 +22,27 @@ Modular Exponentiation algorithm. The steps are shown in a table format.
 ———— I N P U T ————————————————————————————————————————————————————————
 
 Enter the base, exponent, and mod of the equation."""
+        + (
+            "\n\n\033[31mInvalid input. Please enter integers only.\033[0m\n"
+            if invalid
+            else ""
+        )
     )
 
-    # Command line input
-    if len(sys.argv) > 1:
-        base = int(sys.argv[1])
-        exponent = int(sys.argv[2])
-        mod = int(sys.argv[3])
-        print(
-            f"""Base     =  {base}
-Exponent =  {exponent}
-Mod      =  {mod}"""
-        )
-    # Input inside the program
+    base = input("Base     =  ")
+    exponent = input("Exponent =  ")
+    mod = input("Mod      =  ")
+
+    # Check if the input is an integer
+    if not Utils.CHECK_INT_INPUT(base, exponent, mod):
+        Utils.CLEAR_TERMINAL()
+        PROGRAM(invalid=True)
+        return
     else:
-        base = int(input("Base     =  "))
-        exponent = int(input("Exponent =  "))
-        mod = int(input("Mod      =  "))
+        base = int(base)
+        exponent = int(exponent)
+        mod = int(mod)
+
     print(
         f"""\033[33m{base}^{exponent} % {mod}\033[0m
 
