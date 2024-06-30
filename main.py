@@ -1,5 +1,5 @@
 # Made by absolutepraya (github.com/absolutepraya)
-# Version 1.70
+# Version 1.80
 
 from Calculators import (
     Modular_Exponentiation,
@@ -23,6 +23,8 @@ def header(extra="Enter a calculator number or command."):
   ┃┃┃┃┃┏┛  ┃ ┏┓┃┏┓┏┃┏┓╋┏┓┏┓  
   ┻┛┛ ┗┗━  ┗┛┗┻┗┗┗┻┗┗┻┗┗┛┛    by absolutepraya
 ╘═══════════════════════════╛
+
+https://github.com/absolutepraya/dm2-calculator
 
 \033[34mEquipped with steps!\033[0m
 
