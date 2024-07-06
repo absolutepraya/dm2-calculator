@@ -1,5 +1,8 @@
 # Discrete Mathematics 2 Calculator with Steps
 
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+
 This is not just a simple calculator, but a calculator that also provide ***step-by-step solutions*** for the following topics:
 
 1. Modular Exponentiation
